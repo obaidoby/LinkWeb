@@ -621,8 +621,8 @@
                 const data = await response.json();
                 
                 if (data.status === 'ok' && data.items && data.items.length > 0) {
-                    // Display up to 4 most recent articles
-                    const articles = data.items.slice(0, 4);
+                    // Display up to 3 most recent articles
+                    const articles = data.items.slice(0, 3);
                     
                     mediumContainer.innerHTML = articles.map(article => {
                         // Extract first image from content if available
