@@ -391,16 +391,6 @@
                             <span class="expertise-badge">Research & Teaching</span>
                         </div>
                     </div>
-
-                    <div class="text-left">
-                        <h3 class="text-sm font-semibold mb-3 text-center text-blue-200">Notable Achievements</h3>
-                        <div class="space-y-1 text-xs text-gray-300">
-                            <div>Global Korea Scholarship (2020)</div>
-                            <div>Publications in high-impact Journals</div>
-                            <div>Assistant Professor Experience</div>
-                            <div>International Research Collaboration</div>
-                        </div>
-                    </div>
                 </div>
             </div>
             
@@ -454,7 +444,7 @@
             
             <!-- Contact Section - Right -->
             <div class="contact-section w-1/4">
-                <div class="glass-effect p-8">
+                <div class="glass-effect p-12">
                     <h2 class="section-title">Get In Touch</h2>
                     
                     <div class="contact-item">
@@ -500,7 +490,7 @@
                     <!-- Additional Quick Links -->
                     <div class="mt-8">
                         <h3 class="text-lg font-semibold mb-4 text-center text-gray-200">Quick Actions</h3>
-                        <div class="space-y-3">
+                        <div class="space-y-5">
                             <a href="https://calendly.com/obaidoby" target="_blank" class="link-button text-sm">
                                 <i class="fas fa-calendar-plus"></i>
                                 <span>Schedule Meeting</span>
@@ -509,16 +499,6 @@
                                 <i class="fas fa-download"></i>
                                 <span>Download vCard</span>
                             </button>
-                        </div>
-                    </div>
-
-                    <!-- Research Highlights -->
-                    <div class="mt-6 p-4 bg-rgba(255,255,255,0.05) rounded-lg">
-                        <h4 class="text-sm font-semibold mb-2 text-blue-200">Recent Publications</h4>
-                        <div class="text-xs text-gray-300 space-y-1">
-                            <div>Chemical Engineering Journal (IF 13.4)</div>
-                            <div>Journal of Cleaner Production (IF 10)</div>
-                            <div>Multiple high-impact publications</div>
                         </div>
                     </div>
                 </div>
@@ -621,7 +601,7 @@
                 const data = await response.json();
                 
                 if (data.status === 'ok' && data.items && data.items.length > 0) {
-                    // Display up to 3 most recent articles
+                    // Display up to 4 most recent articles
                     const articles = data.items.slice(0, 3);
                     
                     mediumContainer.innerHTML = articles.map(article => {
