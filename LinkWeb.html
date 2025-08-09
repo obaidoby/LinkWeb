@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Mohammad Obaid Qamar - Professional Link Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a237e 0%, #283593 25%, #37474f 75%, #455a64 100%);
+            min-height: 100vh;
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        
+        .link-button {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            font-weight: 500;
+            min-height: 60px;
+        }
+        
+        .link-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .link-button:hover::before {
+            left: 100%;
+        }
+        
+        .link-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #64b5f6, #42a5f5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            font-size: 48px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .profile-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .floating-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #e3f2fd;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .landscape-container {
+                flex-direction: column !important;
+            }
+            
+            .profile-section, .links-section, .contact-section {
+                width: 100% !important;
+                margin-bottom: 2rem;
+            }
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .expertise-badge {
+            display: inline-block;
+            background: rgba(100, 181, 246, 0.2);
+            border: 1px solid rgba(100, 181, 246, 0.4);
+            border-radius: 20px;
+            padding: 5px 12px;
+            margin: 3px;
+            font-size: 0.8rem;
+            color: #e3f2fd;
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-particles" id="particles"></div>
+    
+    <div class="container mx-auto px-6 py-8 relative z-10">
+        <div class="landscape-container flex gap-8 items-start">
+            <!-- Profile Section - Left -->
+<div class="profile-section w-1/4">
+    <div class="glass-effect p-8 text-center">
+        <div class="profile-image">
+            <img src="photo.jpeg" alt="Dr. Mohammad Obaid Qamar" class="profile-photo">
+        </div>
+        <h1 class="text-2xl font-bold mb-2">Dr. Mohammad Obaid Qamar</h1>
+        <p class="text-sm text-blue-200 mb-4">Ph.D. in Civil Engineering</p>
+        <p class="text-xs text-gray-300 mb-4">Water Resources & Environmental Engineering</p>
+                    
+                    <div class="text-left mb-4">
+                        <h3 class="text-sm font-semibold mb-3 text-center text-blue-200">Education</h3>
+                        <div class="space-y-2 text-xs">
+                            <div class="bg-rgba(255,255,255,0.05) p-2 rounded-lg">
+                                <div class="font-medium">Ph.D. Civil Engineering</div>
+                                <div class="text-gray-300">Yeungnam University, South Korea</div>
+                                <div class="text-gray-400">CGPA: 4.25/4.50 (2024)</div>
+                            </div>
+                            <div class="bg-rgba(255,255,255,0.05) p-2 rounded-lg">
+                                <div class="font-medium">M.Tech Environmental Engineering</div>
+                                <div class="text-gray-300">Aligarh Muslim University, India</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-left mb-4">
+                        <h3 class="text-sm font-semibold mb-3 text-center text-blue-200">Key Expertise</h3>
+                        <div class="text-center">
+                            <span class="expertise-badge">Nanomaterial Synthesis</span>
+                            <span class="expertise-badge">Water Treatment</span>
+                            <span class="expertise-badge">Environmental Risk</span>
+                            <span class="expertise-badge">Photocatalysis</span>
+                            <span class="expertise-badge">Python & MATLAB</span>
+                            <span class="expertise-badge">Research & Teaching</span>
+                        </div>
+                    </div>
+
+                    <div class="text-left">
+                        <h3 class="text-sm font-semibold mb-3 text-center text-blue-200">Notable Achievements</h3>
+                        <div class="space-y-1 text-xs text-gray-300">
+                            <div>• Global Korea Scholarship (2020)</div>
+                            <div>• Publications in Chemical Engineering Journal (IF 13.4)</div>
+                            <div>• Assistant Professor Experience</div>
+                            <div>• International Research Collaboration</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Links Section - Center -->
+            <div class="links-section w-2/4">
+                <div class="glass-effect p-8">
+                    <h2 class="section-title">Connect With Me</h2>
+                    
+                    <!-- Social Media & Professional Links Grid -->
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <a href="https://linkedin.com/in/mohammad-obaid-qamar-12201a60" target="_blank" class="link-button">
+                            <i class="fab fa-linkedin text-xl text-blue-400"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://www.econexai.site" target="_blank" class="link-button">
+                            <i class="fas fa-brain text-xl text-green-400"></i>
+                            <span>ECONEX-AI Services</span>
+                        </a>
+                        <a href="https://medium.com/@obaidoby" target="_blank" class="link-button">
+                            <i class="fab fa-medium text-xl text-white"></i>
+                            <span>Medium</span>
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=5sA3hY4AAAAJ&hl=en&oi=ao" target="_blank" class="link-button">
+                            <i class="fas fa-graduation-cap text-xl text-yellow-400"></i>
+                            <span>Google Scholar</span>
+                        </a>
+                        <a href="https://obaidweb.in/thepattern" target="_blank" class="link-button">
+                            <i class="fas fa-network-wired text-xl text-purple-400"></i>
+                            <span>The Pattern</span>
+                        </a>
+                        <a href="https://medium.com/@obaidoby/my-books-5de6aefa457e" target="_blank" class="link-button">
+                            <i class="fas fa-book text-xl text-red-400"></i>
+                            <span>My Books</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Website Links -->
+                    <h3 class="text-lg font-semibold mb-4 text-center text-gray-200">Professional Links</h3>
+                    <div class="grid grid-cols-1 gap-3">
+                        <a href="https://www.obaidweb.in" target="_blank" class="link-button">
+                            <i class="fas fa-globe text-xl text-cyan-400"></i>
+                            <span>Personal Website</span>
+                        </a>
+                        <a href="https://obaidweb.in/portfolio" target="_blank" class="link-button">
+                            <i class="fas fa-briefcase text-xl text-orange-400"></i>
+                            <span>Portfolio</span>
+                        </a>
+                        <a href="https://www.dropbox.com/scl/fi/ejz9z2p8ldvm9edalzmhc/CV_Dr.-Qamar.pdf?rlkey=qpmvc3pb9oig35rpiw1jwpbyx&e=1&st=grvn3byr&dl=0" target="_blank" class="link-button">
+                            <i class="fas fa-file-pdf text-xl text-red-500"></i>
+                            <span>Resume/CV</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Section - Right -->
+            <div class="contact-section w-1/4">
+                <div class="glass-effect p-8">
+                    <h2 class="section-title">Get In Touch</h2>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope text-blue-300"></i>
+                        <div>
+                            <div class="text-sm text-gray-300">Email</div>
+                            <div class="text-sm">obaidoby@gmail.com</div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone text-green-300"></i>
+                        <div>
+                            <div class="text-sm text-gray-300">Phone</div>
+                            <div class="text-sm">+91 9457448635</div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt text-red-300"></i>
+                        <div>
+                            <div class="text-sm text-gray-300">Location</div>
+                            <div class="text-sm">Aligarh, India</div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-flag text-orange-300"></i>
+                        <div>
+                            <div class="text-sm text-gray-300">Nationality</div>
+                            <div class="text-sm">Indian</div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-language text-purple-300"></i>
+                        <div>
+                            <div class="text-sm text-gray-300">Languages</div>
+                            <div class="text-sm">English, Urdu, Hindi, Korean</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional Quick Links -->
+                    <div class="mt-8">
+                        <h3 class="text-lg font-semibold mb-4 text-center text-gray-200">Quick Actions</h3>
+                        <div class="space-y-3">
+                            <a href="mailto:obaidoby@gmail.com?subject=Meeting Request" class="link-button text-sm">
+                                <i class="fas fa-calendar-plus"></i>
+                                <span>Schedule Meeting</span>
+                            </a>
+                            <button onclick="downloadVCard()" class="link-button text-sm w-full border-0">
+                                <i class="fas fa-download"></i>
+                                <span>Download vCard</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Research Highlights -->
+                    <div class="mt-6 p-4 bg-rgba(255,255,255,0.05) rounded-lg">
+                        <h4 class="text-sm font-semibold mb-2 text-blue-200">Recent Publications</h4>
+                        <div class="text-xs text-gray-300 space-y-1">
+                            <div>• Chemical Engineering Journal (IF 13.4)</div>
+                            <div>• Journal of Cleaner Production (IF 10)</div>
+                            <div>• Multiple high-impact publications</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="text-center mt-8 text-gray-400 text-sm">
+            <div class="glass-effect p-4 rounded-lg inline-block">
+                <p>&copy; 2024 Dr. Mohammad Obaid Qamar. All rights reserved.</p>
+                <p class="text-xs mt-1">Ph.D. in Civil Engineering | Water Resources & Environmental Engineering</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particle.style.width = particle.style.height = (Math.random() * 4 + 2) + 'px';
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // vCard generation and download
+        function downloadVCard() {
+            const vCardData = `BEGIN:VCARD
+VERSION:3.0
+FN:Dr. Mohammad Obaid Qamar
+N:Qamar;Mohammad Obaid;;Dr.;
+TITLE:Assistant Professor, Environmental Engineering Researcher
+ORG:Independent Researcher
+EMAIL:obaidoby@gmail.com
+TEL:+919457448635
+ADR:;;Aligarh;;202002;India
+URL:https://www.obaidweb.in
+NOTE:Ph.D. in Civil Engineering from Yeungnam University, South Korea. Specializing in Water Resources and Environmental Engineering, nanomaterial synthesis, and sustainable water treatment systems.
+CATEGORIES:Research,Engineering,Education,Environmental Science
+END:VCARD`;
+
+            const blob = new Blob([vCardData], { type: 'text/vcard' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Dr_Mohammad_Obaid_Qamar.vcf';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+        
+        // Initialize particles when page loads
+        document.addEventListener('DOMContentLoaded', createParticles);
+        
+        // Add smooth scrolling for any anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add click tracking for analytics (optional)
+        document.querySelectorAll('.link-button').forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.href) {
+                    console.log('Link clicked:', this.href);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
