@@ -472,6 +472,24 @@
                 transform: none !important;
             }
         }
+        /* Equal height columns for the main layout */
+.landscape-container {
+    display: flex;
+    align-items: stretch; /* make all columns same height */
+}
+
+.profile-section,
+.links-section,
+.contact-section {
+    display: flex;
+    flex-direction: column; /* keep their inner layout */
+}
+
+.profile-section .glass-effect,
+.links-section .glass-effect,
+.contact-section .glass-effect {
+    height: 100%; /* match the glass-effect boxes height */
+}
     </style>
 </head>
 <body>
