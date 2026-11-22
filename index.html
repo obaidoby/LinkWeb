@@ -268,11 +268,11 @@ footer{margin-top:56px}footer .brand{font-size:1.3rem}footer .brand svg{width:44
 
 <section id="contact"><div class="sh rv"><small>Contact</small><h2>Let’s connect</h2></div>
 <div class="bento"><div class="card s6 tilt rv">
-<div class="ci"><i class="fas fa-envelope"></i><span><small>Email</small>obaidoby@gmail.com</span></div>
+<div class="ci"><i class="fas fa-envelope"></i><span><small>Email</small>obaidqamar@yu.ac.kr</span></div>
 <div class="ci"><i class="fas fa-globe"></i><span><small>Websites</small>obaidconnect.online · econexai.site</span></div>
 <div class="ci"><i class="fas fa-location-dot"></i><span><small>Location</small>India</span></div></div>
 <div class="card s6 tilt rv" style="display:flex;flex-direction:column;gap:12px;justify-content:center">
-<a class="btn p" href="mailto:obaidoby@gmail.com"><i class="fas fa-paper-plane"></i>Send an email</a>
+<a class="btn p" href="mailto:obaidqamar@yu.ac.kr"><i class="fas fa-paper-plane"></i>Send an email</a>
 <button class="btn" id="cp2"><i class="fas fa-copy"></i>Copy email address</button>
 <a class="btn" href="https://calendly.com/obaidoby" target="_blank" rel="noopener"><i class="fas fa-calendar-plus"></i>Schedule a meeting</a>
 <button class="btn" id="vc"><i class="fas fa-address-card"></i>Download vCard</button></div></div>
@@ -281,7 +281,7 @@ footer{margin-top:56px}footer .brand{font-size:1.3rem}footer .brand svg{width:44
 
 <footer><div class="wrap">
 <div class="brand"><svg><use href="#oc"/></svg>Obaid<em>Connect</em><small>.online</small></div>
-<div class="soc"><a href="https://linkedin.com/in/mohammad-obaid-qamar-12201a60" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="https://scholar.google.com/citations?user=5sA3hY4AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener" aria-label="Scholar"><i class="fas fa-graduation-cap"></i></a><a href="https://www.econexai.site" target="_blank" rel="noopener" aria-label="ECONEX-AI"><i class="fas fa-leaf"></i></a><a href="https://medium.com/@obaidoby" target="_blank" rel="noopener" aria-label="Medium"><i class="fab fa-medium"></i></a><a href="mailto:obaidoby@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a></div>
+<div class="soc"><a href="https://linkedin.com/in/mohammad-obaid-qamar-12201a60" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="https://scholar.google.com/citations?user=5sA3hY4AAAAJ&hl=en&oi=ao" target="_blank" rel="noopener" aria-label="Scholar"><i class="fas fa-graduation-cap"></i></a><a href="https://www.econexai.site" target="_blank" rel="noopener" aria-label="ECONEX-AI"><i class="fas fa-leaf"></i></a><a href="https://medium.com/@obaidoby" target="_blank" rel="noopener" aria-label="Medium"><i class="fab fa-medium"></i></a><a href="mailto:obaidqamar@yu.ac.kr" aria-label="Email"><i class="fas fa-envelope"></i></a></div>
 <p>© <span id="yr"></span> Mohammad Obaid Qamar · www.obaidconnect.online</p>
 <p>Ph.D. in Civil Engineering · Water Resources &amp; Environmental Engineering</p></div></footer>
 
@@ -336,10 +336,10 @@ $('#th').onclick=()=>{const l=root.dataset.theme==='dark';root.dataset.theme=l?'
 $('#bg').onclick=()=>$('#lk').classList.toggle('open');$('#lk').onclick=()=>$('#lk').classList.remove('open');
 // toast, copy, share, vcard
 function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2200)}
-const copyMail=()=>navigator.clipboard.writeText('obaidoby@gmail.com').then(()=>toast('Email copied ✓'),()=>toast('obaidoby@gmail.com'));
+const copyMail=()=>navigator.clipboard.writeText('obaidqamar@yu.ac.kr').then(()=>toast('Email copied ✓'),()=>toast('obaidqamar@yu.ac.kr'));
 $('#cp2').onclick=copyMail;
 const share=()=>navigator.share?navigator.share({title:document.title,url:location.href}).catch(()=>{}):navigator.clipboard.writeText(location.href).then(()=>toast('Link copied ✓'));$('#sh').onclick=share;
-const vcard=()=>{const v=`BEGIN:VCARD\nVERSION:3.0\nFN:Mohammad Obaid Qamar\nN:Qamar;Mohammad Obaid;\nTITLE:Environmental Engineer and Researcher\nORG:Independent Researcher\nEMAIL:obaidoby@gmail.com\nADR:;;Aligarh;;202002;India\nURL:https://www.obaidconnect.online\nNOTE:Ph.D. in Civil Engineering, Yeungnam University, South Korea. Water Resources and Environmental Engineering.\nEND:VCARD`;const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([v],{type:'text/vcard'}));a.download='Dr_Mohammad_Obaid_Qamar.vcf';a.click();toast('vCard downloaded ✓')};$('#vc').onclick=vcard;
+const vcard=()=>{const v=`BEGIN:VCARD\nVERSION:3.0\nFN:Mohammad Obaid Qamar\nN:Qamar;Mohammad Obaid;\nTITLE:Environmental Engineer and Researcher\nORG:Independent Researcher\nEMAIL:obaidqamar@yu.ac.kr\nADR:;;Aligarh;;202002;India\nURL:https://www.obaidconnect.online\nNOTE:Ph.D. in Civil Engineering, Yeungnam University, South Korea. Water Resources and Environmental Engineering.\nEND:VCARD`;const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([v],{type:'text/vcard'}));a.download='Dr_Mohammad_Obaid_Qamar.vcf';a.click();toast('vCard downloaded ✓')};$('#vc').onclick=vcard;
 $('#yr').textContent=new Date().getFullYear();
 // command palette
 const cmds=[['Consultancy','#consultancy','fa-briefcase'],['About','#about','fa-user'],['Experience','#experience','fa-briefcase'],['Projects','#projects','fa-diagram-project'],['Research','#research','fa-flask'],['Honours','#honours','fa-award'],['Creative','#creative','fa-palette'],['Contact','#contact','fa-envelope'],...L.concat(CR).map(l=>[l[0],l[4],'fa-arrow-up-right-from-square','ext']),['Toggle theme','#','fa-circle-half-stroke','fn',()=>$('#th').click()],['Copy email','#','fa-copy','fn',copyMail],['Download vCard','#','fa-address-card','fn',vcard],['Share this site','#','fa-share-nodes','fn',share]];
